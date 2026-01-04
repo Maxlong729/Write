@@ -26,3 +26,9 @@ export interface WorkloadItem {
   hours: number;
   desc: string;
 }
+
+// Added RiskItem interface to support RISKS constant
+export interface RiskItem {
+  type: string;
+  action: string;
+}

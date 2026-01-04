@@ -1,5 +1,5 @@
 
-import { Phase, Chapter, WorkloadItem } from './types';
+import { Phase, Chapter, WorkloadItem, RiskItem } from './types';
 
 export const PHASES: Phase[] = [
   { id: 1, name: '第一阶段', range: '1月3日-1月19日', days: 17, task: '完成前言、第一篇（第1-3章）、第二篇（第4章）', color: 'blue' },
@@ -104,15 +104,18 @@ export const WORKLOAD_DATA: WorkloadItem[] = [
   { phase: '第五阶段', words: 0, hours: 3, desc: '最后冲刺' },
 ];
 
-export const QUALITY_LIST = [
-  "开篇有冲击力（前3页见分晓）",
-  "落地有案例（抽象概念必有场景）",
-  "交付有模板（必须可复用）",
-  "练习有价值（15分钟即刻上手）"
+// Added QUALITY_LIST for quality control section in App
+export const QUALITY_LIST: string[] = [
+  '逻辑连贯：确保前后章节术语一致，流程递进自然',
+  '实操性：每个章节必须包含至少一个可运行的 Prompt 或流程图',
+  '易读性：专业术语需有通俗解释，配合案例说明',
+  '创新点：不仅是工具介绍，要突出“工作流”思维的深度',
+  '交付物对齐：核对每个章节的交付物是否与导读承诺一致'
 ];
 
-export const RISKS = [
-  { type: "进度落后", action: "保证1,2,4篇，第3篇可删减深度。" },
-  { type: "内容空泛", action: "重写或删除，宁缺毋滥。" },
-  { type: "案例缺失", action: "优先样章，其次真实故事，最后假设。" }
+// Added RISKS for risk contingency section in App
+export const RISKS: RiskItem[] = [
+  { type: '进度滞后', action: '若某一阶段延期超过3天，则取消周末休息，启用备用简化案例。' },
+  { type: '内容深度不足', action: '增加与行业专家的深度访谈，引入更复杂的生产环境案例。' },
+  { type: '技术迭代过快', action: '关注各大平台最新动态，在第四阶段统一更新时效性内容。' }
 ];
